@@ -2,9 +2,6 @@ import geopandas as gpd
 import folium
 from folium.plugins import *
 
-def test(text):
-    print("Hello World: " + text)
-
 def printTest(state):
     print("From mapMaker.py")
     print(state.head())

@@ -2,9 +2,6 @@ import geopandas as gpd
 import pandas as pd
 import mapMaker as mm
 
-# We are to write a program that asks the user for a zipcode, and returns the state that zipcode is in.
-# The state returned will be used to load the shapefile for that state.
-
 # read in the zip code data
 zipData = pd.read_csv("ZIPindex.csv")
 zipData = zipData[['ZIP', 'STATEABV']]
@@ -43,7 +40,6 @@ def loadShapefile(state):
 def main():
     state, zip = getState()
     myState = loadShapefile(state)
-    # print(myState.head())
     mm.makeMap(myState, zip)
 
 # call main function
