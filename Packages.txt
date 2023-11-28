@@ -1,0 +1,5 @@
+This is a list of non-standard packages needed to properly run the visualization.
+
+geopandas
+geopy
+folium

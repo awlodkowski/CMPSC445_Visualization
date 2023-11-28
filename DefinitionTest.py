@@ -3,8 +3,6 @@ import pandas as pd
 import mapMaker as mm
 import LatLongGetter as llg
 
-
-
 def getAddr():
     """This function gets the address, state, and zip code from the user"""
 
