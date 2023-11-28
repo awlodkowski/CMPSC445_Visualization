@@ -10,7 +10,9 @@ def makeMap(myState, myPlace):
     m = folium.Map(location=[myPlace['LAT'], myPlace['LONG']], zoom_start=12)
 
     # add the statesBase layer
-    folium.GeoJson(statesBase).add_to(m)
+    folium.GeoJson(statesBase,
+                   style_function= lambda x: {'fillopacity': 0.05}
+                   ).add_to(m)
 
     # add the zip code layer
     folium.GeoJson(myState).add_to(m)
@@ -41,7 +43,7 @@ def makeMap(myState, myPlace):
     zipMap = folium.features.GeoJson(myState,
                                         tooltip=zipTooltip,
                                         style_function=lambda x: {'fillColor': x['properties']['color'], 
-                                                                  'fillOpacity': 0.9, 
+                                                                  'fillOpacity': 0.5, 
                                                                   'color': 'black',
                                                                   'weight': 0.5},
                                         zoom_on_click=True)
